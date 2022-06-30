@@ -60,14 +60,8 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(),
     }
 
     override fun onSingleMovieClicked(movieId: Int?) {
-        movieId?.let {
-            val fragment = SingleMovieFragment(movieId)
 
-            requireActivity().supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.main_content, fragment)
-                .commit()
-        }
+
     }
 
 
