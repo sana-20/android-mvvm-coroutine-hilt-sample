@@ -9,13 +9,14 @@ import com.shannon.moviemvvm.utils.visible
 import com.shannon.moviemvvm.viewmodel.SingleMovieViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class SingleMovieFragment(private val movieId: Int) : BaseFragment<FragmentSingleMovieBinding>() {
+class SingleMovieFragment : BaseFragment<FragmentSingleMovieBinding>() {
 
     private val viewModel: SingleMovieViewModel by viewModel()
 
     override fun getViewBinding(): FragmentSingleMovieBinding  = FragmentSingleMovieBinding.inflate(layoutInflater)
 
     override fun initView() {
+        val movieId = arguments?.getInt("movieId") ?: 1
         viewModel.fetchMovieDetails(movieId)
     }
 

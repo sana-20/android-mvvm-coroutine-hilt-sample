@@ -1,8 +1,11 @@
 package com.shannon.moviemvvm.ui.movies
 
 import android.view.View
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
+import com.shannon.moviemvvm.R
 import com.shannon.moviemvvm.data.model.Movie
 import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.databinding.FragmentMovieListBinding
@@ -60,8 +63,8 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(),
     }
 
     override fun onSingleMovieClicked(movieId: Int?) {
-
-
+        val bundle = bundleOf("movieId" to movieId)
+        findNavController().navigate(R.id.action_movieListFragment_to_singleMovieFragment , bundle)
     }
 
 

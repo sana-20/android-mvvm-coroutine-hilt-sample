@@ -8,7 +8,11 @@
         android:id="@+id/movieListFragment"
         android:name="com.shannon.moviemvvm.ui.movies.MovieListFragment"
         android:label="MovieListFragment"
-        tools:layout="@layout/fragment_movie_list"/>
+        tools:layout="@layout/fragment_movie_list">
+        <action
+            android:id="@+id/action_movieListFragment_to_singleMovieFragment"
+            app:destination="@id/singleMovieFragment" />
+    </fragment>
     <fragment
         android:id="@+id/singleMovieFragment"
         android:name="com.shannon.moviemvvm.ui.details.SingleMovieFragment"
