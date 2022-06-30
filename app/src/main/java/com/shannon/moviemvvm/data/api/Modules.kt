@@ -5,8 +5,8 @@ import com.shannon.moviemvvm.utils.Constants.API_KEY
 import com.shannon.moviemvvm.utils.Constants.BASE_URL
 import com.shannon.moviemvvm.data.repository.Repository
 import com.shannon.moviemvvm.data.repository.RepositoryImpl
-import com.shannon.moviemvvm.ui.movies.MainActivityViewModel
-import com.shannon.moviemvvm.ui.details.SingleMovieViewModel
+import com.shannon.moviemvvm.viewmodel.MainActivityViewModel
+import com.shannon.moviemvvm.viewmodel.SingleMovieViewModel
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module

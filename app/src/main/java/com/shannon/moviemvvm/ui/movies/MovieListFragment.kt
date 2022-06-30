@@ -3,13 +3,12 @@ package com.shannon.moviemvvm.ui.movies
 import android.view.View
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
-import com.shannon.moviemvvm.R
 import com.shannon.moviemvvm.data.model.Movie
 import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.databinding.FragmentMovieListBinding
 import com.shannon.moviemvvm.ui.BaseFragment
-import com.shannon.moviemvvm.ui.details.SingleMovieFragment
 import com.shannon.moviemvvm.utils.observe
+import com.shannon.moviemvvm.viewmodel.MainActivityViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieListFragment : BaseFragment<FragmentMovieListBinding>(),

@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui.details
+package com.shannon.moviemvvm.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.data.repository.Repository
 import com.shannon.moviemvvm.data.model.MovieDetails
-import com.shannon.moviemvvm.ui.BaseViewModel
 import io.reactivex.schedulers.Schedulers
 
 class SingleMovieViewModel (private val repository: Repository)  : BaseViewModel() {

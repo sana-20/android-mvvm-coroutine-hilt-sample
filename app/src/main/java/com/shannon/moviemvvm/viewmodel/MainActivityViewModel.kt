@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui.movies
+package com.shannon.moviemvvm.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
@@ -10,7 +10,6 @@ import com.shannon.moviemvvm.data.repository.MovieSourceFactory
 import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.data.repository.Repository
 import com.shannon.moviemvvm.data.model.Movie
-import com.shannon.moviemvvm.ui.BaseViewModel
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -20,7 +19,9 @@ class MainActivityViewModel(private val repository: Repository) : BaseViewModel(
     private val movieSourceFactory = MovieSourceFactory(repository, compositeDisposable)
 
     init {
-        moviePagedList = (LivePagedListBuilder(movieSourceFactory, PagedListThreadPoolProvider.providePagedListConfig(POST_PER_PAGE, POST_PER_PAGE))).
+        moviePagedList = (LivePagedListBuilder(movieSourceFactory,
+            PagedListThreadPoolProvider.providePagedListConfig(POST_PER_PAGE, POST_PER_PAGE)
+        )).
         setFetchExecutor(PagedListThreadPoolProvider.provideThreadPool(5)).build()
     }
 

@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui
+package com.shannon.moviemvvm.viewmodel
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

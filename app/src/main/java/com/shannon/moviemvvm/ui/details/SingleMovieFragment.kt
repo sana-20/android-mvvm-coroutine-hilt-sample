@@ -6,6 +6,7 @@ import com.shannon.moviemvvm.databinding.FragmentSingleMovieBinding
 import com.shannon.moviemvvm.ui.BaseFragment
 import com.shannon.moviemvvm.utils.observe
 import com.shannon.moviemvvm.utils.visible
+import com.shannon.moviemvvm.viewmodel.SingleMovieViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SingleMovieFragment(private val movieId: Int) : BaseFragment<FragmentSingleMovieBinding>() {
