@@ -17,5 +17,10 @@
         android:id="@+id/singleMovieFragment"
         android:name="com.shannon.moviemvvm.ui.details.SingleMovieFragment"
         android:label="SingleMovieFragment"
-        tools:layout="@layout/fragment_single_movie"/>
+        tools:layout="@layout/fragment_single_movie">
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="1"/>
+    </fragment>
 </navigation>

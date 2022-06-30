@@ -1,5 +1,6 @@
 package com.shannon.moviemvvm.ui.details
 
+import androidx.navigation.fragment.navArgs
 import com.shannon.moviemvvm.data.model.MovieDetails
 import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.databinding.FragmentSingleMovieBinding
@@ -16,7 +17,8 @@ class SingleMovieFragment : BaseFragment<FragmentSingleMovieBinding>() {
     override fun getViewBinding(): FragmentSingleMovieBinding  = FragmentSingleMovieBinding.inflate(layoutInflater)
 
     override fun initView() {
-        val movieId = arguments?.getInt("movieId") ?: 1
+        val safeArgs: SingleMovieFragmentArgs by navArgs()
+        val movieId = safeArgs.movieId
         viewModel.fetchMovieDetails(movieId)
     }
 
