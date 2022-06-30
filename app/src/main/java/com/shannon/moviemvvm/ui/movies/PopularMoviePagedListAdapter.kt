@@ -1,20 +1,17 @@
 package com.shannon.moviemvvm.ui.movies
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.data.model.Movie
+import com.shannon.moviemvvm.data.repository.NetworkState
 import com.shannon.moviemvvm.databinding.MovieListItemBinding
 import com.shannon.moviemvvm.databinding.NetworkStateItemBinding
-import com.shannon.moviemvvm.ui.details.SingleMovieActivity
 import com.shannon.moviemvvm.utils.visible
 
-class PopularMoviePagedListAdapter(private val context: Context) :
+class PopularMoviePagedListAdapter(val listener: Listener) :
     PagedListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback()) {
 
     val MOVIE_VIEW_TYPE = 1
@@ -22,6 +19,9 @@ class PopularMoviePagedListAdapter(private val context: Context) :
 
     private var networkState: NetworkState? = null
 
+    interface Listener {
+        fun onSingleMovieClicked(movieId: Int?)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == MOVIE_VIEW_TYPE) {
@@ -34,7 +34,7 @@ class PopularMoviePagedListAdapter(private val context: Context) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (getItemViewType(position) == MOVIE_VIEW_TYPE) {
-            (holder as MovieItemViewHolder).bind(getItem(position), context)
+            (holder as MovieItemViewHolder).bind(getItem(position))
         } else {
             (holder as NetworkStateItemViewHolder).bind(networkState)
         }
@@ -70,18 +70,15 @@ class PopularMoviePagedListAdapter(private val context: Context) :
     }
 
 
-    class MovieItemViewHolder(private val binding: MovieListItemBinding) :
+    inner class MovieItemViewHolder(private val binding: MovieListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(movie: Movie?, context: Context) {
+        fun bind(movie: Movie?) {
             binding.movie = movie
 
             itemView.setOnClickListener {
-                val intent = Intent(context, SingleMovieActivity::class.java)
-                intent.putExtra("id", movie?.id)
-                context.startActivity(intent)
+                listener.onSingleMovieClicked(movie?.id)
             }
-
         }
 
     }
