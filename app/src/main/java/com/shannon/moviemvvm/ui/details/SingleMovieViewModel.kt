@@ -32,7 +32,7 @@ class SingleMovieViewModel (private val repository: Repository)  : BaseViewModel
                         },
                         {
                             _networkState.postValue(NetworkState.ERROR)
-                            Log.e("MovieDetailsDataSource", it.message)
+                            Log.e("MovieDetailsDataSource", it.message.toString())
                         }
                     )
             )
@@ -40,7 +40,7 @@ class SingleMovieViewModel (private val repository: Repository)  : BaseViewModel
         }
 
         catch (e: Exception){
-            Log.e("MovieDetailsDataSource",e.message)
+            Log.e("MovieDetailsDataSource",e.message.toString())
         }
     }
 
