@@ -6,18 +6,18 @@
     app:startDestination="@id/movieListFragment">
     <fragment
         android:id="@+id/movieListFragment"
-        android:name="com.shannon.moviemvvm.ui.movies.MovieListFragment"
-        android:label="MovieListFragment"
-        tools:layout="@layout/fragment_movie_list">
+        android:name="com.shannon.moviemvvm.ui.movies.MoviesFragment"
+        android:label="MoviesFragment"
+        tools:layout="@layout/fragment_movies">
         <action
             android:id="@+id/action_movieListFragment_to_singleMovieFragment"
-            app:destination="@id/singleMovieFragment" />
+            app:destination="@id/movieDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/singleMovieFragment"
-        android:name="com.shannon.moviemvvm.ui.details.SingleMovieFragment"
-        android:label="SingleMovieFragment"
-        tools:layout="@layout/fragment_single_movie">
+        android:id="@+id/movieDetailFragment"
+        android:name="com.shannon.moviemvvm.ui.detail.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_detail_movie">
         <argument
             android:name="movieId"
             app:argType="integer"

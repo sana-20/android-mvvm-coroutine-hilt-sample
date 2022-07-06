@@ -1,7 +1,16 @@
-package com.shannon.moviemvvm.data.model
-
+package com.shannon.moviemvvm.data
 
 import com.google.gson.annotations.SerializedName
+
+data class MovieResponse(
+    val page: Int,
+    @SerializedName("results")
+    val movieList: List<Movie>,
+    @SerializedName("total_pages")
+    val totalPages: Int,
+    @SerializedName("total_results")
+    val totalResults: Int
+)
 
 data class MovieDetails(
     val budget: Int,
@@ -20,4 +29,13 @@ data class MovieDetails(
     val video: Boolean,
     @SerializedName("vote_average")
     val rating: Double
+)
+
+data class Movie(
+    val id: Int,
+    @SerializedName("poster_path")
+    val posterPath: String,
+    @SerializedName("release_date")
+    val releaseDate: String,
+    val title: String
 )

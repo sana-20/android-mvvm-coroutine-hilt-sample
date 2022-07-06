@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.data.repository
+package com.shannon.moviemvvm.data
 
 enum class Status {
     RUNNING,
@@ -12,6 +12,5 @@ class NetworkState(val status: Status, val msg: String) {
         val LOADED: NetworkState = NetworkState(Status.SUCCESS, "Success")
         val LOADING: NetworkState = NetworkState(Status.RUNNING, "Running")
         val ERROR: NetworkState = NetworkState(Status.FAILED, "Something went wrong")
-        val ENDOFLIST: NetworkState = NetworkState(Status.FAILED, "You have reached the end")
     }
 }

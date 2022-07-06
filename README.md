@@ -23,15 +23,13 @@ https://developers.themoviedb.org/3/getting-started/introduction
   - [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle) Create a UI that automatically responds to lifecycle events.
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) Build data objects that notify views when the underlying database changes.  
   - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) Store UI-related data that isn't destroyed on app rotations.
-  - [Paging](https://developer.android.com/jetpack/androidx/releases/paging) Makes it easier for you to load data gradually and gracefully within your app's RecyclerView.
+  - [Paging](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) Makes it easier for you to load data gradually and gracefully within your app's RecyclerView.
+  - [Navigation](https://developer.android.com/guide/navigation) Android Jetpack's Navigation component helps you implement navigation.
 
 - Follow [MVVM Architecture](https://developer.android.com/jetpack/guide)
   - View - DataBinding - ViewModel - Model
-  - [Koin](https://insert-koin.io/) for dependency injection
-
-- Reactive Programming
-  - [RxJava2](https://github.com/ReactiveX/RxJava) Compose asynchronous and event-based programs by using observable sequences.
-  - [RxAnndroid](https://github.com/ReactiveX/RxAndroid) Reactive Extensions for Android. It makes it easy writing reactive components in Android 
+  - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) for dependency injection
+  - [Coroutine](https://kotlinlang.org/docs/coroutines-overview.html) Asynchronous or non-blocking programming
   
 - Build a Restful API
   - [Retrofit2](https://square.github.io/retrofit/) A type-safe HTTP client for Android and Java

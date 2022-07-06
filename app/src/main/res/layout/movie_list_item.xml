@@ -5,7 +5,7 @@
     <data>
         <variable
             name="movie"
-            type="com.shannon.moviemvvm.data.model.Movie" />
+            type="com.shannon.moviemvvm.data.Movie" />
     </data>
 
 <androidx.cardview.widget.CardView
