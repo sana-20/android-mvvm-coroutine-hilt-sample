@@ -1,11 +1,11 @@
-package com.shannon.moviemvvm.ui.movies
+package com.shannon.moviemvvm.presentation.ui.movies
 
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.shannon.moviemvvm.databinding.FragmentMoviesBinding
-import com.shannon.moviemvvm.ui.BaseFragment
+import com.shannon.moviemvvm.presentation.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

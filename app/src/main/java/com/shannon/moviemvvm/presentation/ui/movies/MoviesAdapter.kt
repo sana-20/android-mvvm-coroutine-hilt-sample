@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui.movies
+package com.shannon.moviemvvm.presentation.ui.movies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

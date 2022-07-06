@@ -1,11 +1,11 @@
-package com.shannon.moviemvvm.ui.detail
+package com.shannon.moviemvvm.presentation.ui.detail
 
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.shannon.moviemvvm.databinding.FragmentDetailMovieBinding
 import com.shannon.moviemvvm.domain.dto.MovieDetailDto
-import com.shannon.moviemvvm.ui.BaseFragment
+import com.shannon.moviemvvm.presentation.ui.BaseFragment
 import com.shannon.moviemvvm.utils.Constants
 import com.shannon.moviemvvm.utils.observe
 import java.text.NumberFormat

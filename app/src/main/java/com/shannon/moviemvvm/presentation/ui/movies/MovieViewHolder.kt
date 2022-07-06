@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui.movies
+package com.shannon.moviemvvm.presentation.ui.movies
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide

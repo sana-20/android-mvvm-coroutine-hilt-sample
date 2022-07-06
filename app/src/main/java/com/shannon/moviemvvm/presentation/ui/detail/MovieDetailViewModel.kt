@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui.detail
+package com.shannon.moviemvvm.presentation.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

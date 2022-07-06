@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.ui
+package com.shannon.moviemvvm.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
