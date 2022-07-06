@@ -1,4 +1,4 @@
-# android-mvvm-rxjava2-koin-sample
+# android-mvvm-coroutine-hilt-sample
 
 
 
