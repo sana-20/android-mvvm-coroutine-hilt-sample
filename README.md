@@ -19,7 +19,6 @@ https://developers.themoviedb.org/3/getting-started/introduction
 ## Technical Stacks
 - The entire code is based in [Kotlin](https://kotlinlang.org/)
 - Use Android Jetpack Libraries
-  - [DataBinding](https://developer.android.com/topic/libraries/data-binding/start) Declaratively bind observable data to UI elements.
   - [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle) Create a UI that automatically responds to lifecycle events.
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) Build data objects that notify views when the underlying database changes.  
   - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) Store UI-related data that isn't destroyed on app rotations.

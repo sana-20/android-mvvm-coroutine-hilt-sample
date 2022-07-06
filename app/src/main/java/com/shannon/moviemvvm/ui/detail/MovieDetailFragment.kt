@@ -2,18 +2,21 @@ package com.shannon.moviemvvm.ui.detail
 
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.shannon.moviemvvm.data.MovieDetails
-import com.shannon.moviemvvm.data.NetworkState
 import com.shannon.moviemvvm.databinding.FragmentDetailMovieBinding
 import com.shannon.moviemvvm.ui.BaseFragment
+import com.shannon.moviemvvm.utils.Constants
 import com.shannon.moviemvvm.utils.observe
-import com.shannon.moviemvvm.utils.visible
+import java.text.NumberFormat
+import java.util.*
 
 class MovieDetailFragment : BaseFragment<FragmentDetailMovieBinding>() {
 
     private val detailViewModel: MovieDetailViewModel by activityViewModels()
 
-    override fun getViewBinding(): FragmentDetailMovieBinding  = FragmentDetailMovieBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentDetailMovieBinding =
+        FragmentDetailMovieBinding.inflate(layoutInflater)
 
     override fun initView() {
         val safeArgs: MovieDetailFragmentArgs by navArgs()
@@ -27,12 +30,22 @@ class MovieDetailFragment : BaseFragment<FragmentDetailMovieBinding>() {
     }
 
     private fun onItemLoaded(movieDetails: MovieDetails) {
-        binding.movieDetails = movieDetails
-    }
+        with(binding) {
+            Glide.with(ivMoviePoster)
+                .load(Constants.POSTER_BASE_URL + movieDetails.posterPath)
+                .into(ivMoviePoster)
 
-    private fun handleLoading(status: NetworkState) {
-        binding.progressBar.visible(status == NetworkState.LOADING)
-        binding.txtError.visible(status == NetworkState.ERROR)
+            movieTitle.text = movieDetails.title
+            movieTagline.text = movieDetails.tagline
+            movieReleaseDate.text = movieDetails.releaseDate
+            movieRating.text = movieDetails.rating.toString()
+            movieRuntime.text = "${movieDetails.runtime} minutes"
+
+            val formatCurrency = NumberFormat.getCurrencyInstance(Locale.US)
+            movieBudget.text = formatCurrency.format(movieDetails.budget)
+            movieRevenue.text = formatCurrency.format(movieDetails.revenue)
+            movieOverview.text = movieDetails.overview
+        }
     }
 
 }
