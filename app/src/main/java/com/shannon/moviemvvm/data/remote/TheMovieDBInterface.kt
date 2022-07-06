@@ -1,7 +1,7 @@
 package com.shannon.moviemvvm.data.remote
 
-import com.shannon.moviemvvm.data.MovieDetails
-import com.shannon.moviemvvm.data.MovieResponse
+import com.shannon.moviemvvm.data.MovieDetailEntity
+import com.shannon.moviemvvm.data.MoviesEntity
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -13,9 +13,9 @@ interface TheMovieDBInterface {
     // https://api.themoviedb.org/3/
 
     @GET("movie/popular")
-    suspend fun getMovies(@Query("page") page: Int): MovieResponse
+    suspend fun getMovies(@Query("page") page: Int): MoviesEntity
 
     @GET("movie/{movie_id}")
-    suspend fun getMovieDetails(@Path("movie_id") id: Int): MovieDetails
+    suspend fun getMovieDetails(@Path("movie_id") id: Int): MovieDetailEntity
 
 }

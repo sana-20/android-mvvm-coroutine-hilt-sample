@@ -3,8 +3,8 @@ package com.shannon.moviemvvm.ui.detail
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.shannon.moviemvvm.data.MovieDetails
 import com.shannon.moviemvvm.databinding.FragmentDetailMovieBinding
+import com.shannon.moviemvvm.domain.dto.MovieDetailDto
 import com.shannon.moviemvvm.ui.BaseFragment
 import com.shannon.moviemvvm.utils.Constants
 import com.shannon.moviemvvm.utils.observe
@@ -29,7 +29,7 @@ class MovieDetailFragment : BaseFragment<FragmentDetailMovieBinding>() {
         observe(detailViewModel.items, ::onItemLoaded)
     }
 
-    private fun onItemLoaded(movieDetails: MovieDetails) {
+    private fun onItemLoaded(movieDetails: MovieDetailDto) {
         with(binding) {
             Glide.with(ivMoviePoster)
                 .load(Constants.POSTER_BASE_URL + movieDetails.posterPath)
