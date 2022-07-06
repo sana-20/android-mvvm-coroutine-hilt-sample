@@ -1,6 +1,6 @@
 package com.shannon.moviemvvm.domain.mapper
 
-import com.shannon.moviemvvm.data.MovieDetailEntity
+import com.shannon.moviemvvm.data.entity.MovieDetailEntity
 import com.shannon.moviemvvm.domain.dto.MovieDetailDto
 import javax.inject.Inject
 

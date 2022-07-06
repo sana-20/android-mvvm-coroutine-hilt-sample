@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.data
+package com.shannon.moviemvvm.presentation.state
 
 enum class Status {
     RUNNING,

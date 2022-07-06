@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.shannon.moviemvvm.data.repository.MovieRepository
-import com.shannon.moviemvvm.domain.dto.MovieDto
+import com.shannon.moviemvvm.domain.dto.Movie
 import com.shannon.moviemvvm.domain.mapper.MoviesMapper
 import com.shannon.moviemvvm.utils.Constants.NETWORK_PAGE_SIZE
 import kotlinx.coroutines.flow.Flow
@@ -14,7 +14,7 @@ class GetMovieUseCase  @Inject constructor(
     private val movieRepository: MovieRepository,
     private val moviesMapper: MoviesMapper
 ) {
-    fun invoke(): Flow<PagingData<MovieDto>> {
+    fun invoke(): Flow<PagingData<Movie>> {
         return Pager(
             config = PagingConfig(pageSize = NETWORK_PAGE_SIZE, enablePlaceholders = false),
             pagingSourceFactory = {

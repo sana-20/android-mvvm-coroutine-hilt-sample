@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MoviesFragment : BaseFragment<FragmentMoviesBinding>(){
 
-    private val mainViewModel: MainViewModel by activityViewModels()
+    private val moviesViewModel: MoviesViewModel by activityViewModels()
 
     private lateinit var adapter: MoviesAdapter
 
@@ -35,7 +35,7 @@ class MoviesFragment : BaseFragment<FragmentMoviesBinding>(){
     private fun getMovies() {
         job?.cancel()
         job = lifecycleScope.launch {
-            mainViewModel.getMovies().collect {
+            moviesViewModel.getMovies().collect {
                 adapter.submitData(it)
             }
         }

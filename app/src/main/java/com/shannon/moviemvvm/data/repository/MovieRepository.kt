@@ -1,6 +1,6 @@
 package com.shannon.moviemvvm.data.repository
 
-import com.shannon.moviemvvm.data.MoviesEntity
+import com.shannon.moviemvvm.data.entity.MoviesEntity
 import com.shannon.moviemvvm.data.remote.TheMovieDBInterface
 import javax.inject.Inject
 

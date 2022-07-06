@@ -1,4 +1,4 @@
-package com.shannon.moviemvvm.data
+package com.shannon.moviemvvm.data.entity
 
 import androidx.annotation.Keep
 

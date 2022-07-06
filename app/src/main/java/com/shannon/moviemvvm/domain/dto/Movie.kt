@@ -1,8 +1,8 @@
 package com.shannon.moviemvvm.domain.dto
 
-data class MovieDto(
+data class Movie(
     val id: Int,
-    val posterPath: String,
+    val imageUrl: String,
     val releaseDate: String,
     val title: String
 )

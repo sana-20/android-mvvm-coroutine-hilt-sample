@@ -1,7 +1,7 @@
 package com.shannon.moviemvvm.data.remote
 
-import com.shannon.moviemvvm.data.MovieDetailEntity
-import com.shannon.moviemvvm.data.MoviesEntity
+import com.shannon.moviemvvm.data.entity.MovieDetailEntity
+import com.shannon.moviemvvm.data.entity.MoviesEntity
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
