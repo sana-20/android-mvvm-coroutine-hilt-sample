@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shannon.moviemvvm.domain.usecase.GetMovieDetailUseCase
 import com.shannon.moviemvvm.presentation.mapper.DetailMapper
-import com.shannon.moviemvvm.presentation.model.Detail
+import com.shannon.moviemvvm.presentation.state.DetailViewState
+import com.shannon.moviemvvm.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,16 +16,29 @@ import javax.inject.Inject
 class MovieDetailViewModel @Inject constructor(
     private val detailUseCase: GetMovieDetailUseCase,
     private val detailMapper: DetailMapper
-    ) : ViewModel() {
+) : ViewModel() {
 
-    private val _items = MutableLiveData<Detail>()
-    val items: LiveData<Detail> = _items
+    private val _detailViewState = MutableLiveData<DetailViewState>()
+    val detailViewState: LiveData<DetailViewState> = _detailViewState
+
+    private val _toastEvent = MutableLiveData<Event<String>>()
+    val toastEvent: LiveData<Event<String>> = _toastEvent
+
+    private val _loadingEvent = MutableLiveData<Event<Boolean>>()
+    val loadingEvent: LiveData<Event<Boolean>> = _loadingEvent
 
     fun getMovieDetail(movieId: Int) {
+        _loadingEvent.value = Event(true)
         viewModelScope.launch {
             val result = detailUseCase.invoke(movieId)
-            _items.value = detailMapper.mapToDetail(result)
+            val detail = detailMapper.mapToDetail(result)
+            _detailViewState.value = DetailViewState.Data(detail)
+            _loadingEvent.value = Event(false)
         }
+    }
+
+    fun onClickImage() {
+        _toastEvent.value = Event("Image Clicked")
     }
 
 }
