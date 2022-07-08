@@ -1,8 +1,8 @@
 package com.shannon.moviemvvm.di
 
+import com.example.data.remote.TheMovieDBInterface
 import com.google.gson.GsonBuilder
-import com.shannon.moviemvvm.data.remote.TheMovieDBInterface
-import com.shannon.moviemvvm.utils.Constants
+import com.example.common.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

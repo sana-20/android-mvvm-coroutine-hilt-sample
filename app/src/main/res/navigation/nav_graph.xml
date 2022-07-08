@@ -6,7 +6,7 @@
     app:startDestination="@id/movieListFragment">
     <fragment
         android:id="@+id/movieListFragment"
-        android:name="com.shannon.moviemvvm.presentation.ui.movies.MoviesFragment"
+        android:name="com.shannon.moviemvvm.ui.movies.MoviesFragment"
         android:label="MoviesFragment"
         tools:layout="@layout/fragment_movies">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailFragment"
-        android:name="com.shannon.moviemvvm.presentation.ui.detail.MovieDetailFragment"
+        android:name="com.shannon.moviemvvm.ui.detail.MovieDetailFragment"
         android:label="MovieDetailFragment"
         tools:layout="@layout/fragment_detail_movie">
         <argument

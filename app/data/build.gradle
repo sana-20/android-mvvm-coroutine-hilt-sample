@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(":app:common")
+
+    implementation "javax.inject:javax.inject:1"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation 'androidx.paging:paging-common-ktx:3.1.1'
+
+    def coroutine_version = "1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+}
