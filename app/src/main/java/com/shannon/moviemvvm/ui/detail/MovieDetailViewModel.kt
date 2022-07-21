@@ -27,7 +27,9 @@ class MovieDetailViewModel @Inject constructor(
     private val _loadingEvent = MutableLiveData<Event<Boolean>>()
     val loadingEvent: LiveData<Event<Boolean>> = _loadingEvent
 
-    fun getMovieDetail(movieId: Int) {
+    var id: Int = 0
+
+    private fun getMovieDetail(movieId: Int) {
         _loadingEvent.value = Event(true)
         viewModelScope.launch {
             val result = detailUseCase.invoke(movieId)
@@ -39,6 +41,14 @@ class MovieDetailViewModel @Inject constructor(
 
     fun onClickImage() {
         _toastEvent.value = Event("Image Clicked")
+    }
+
+    fun initView() {
+        getMovieDetail(id)
+    }
+
+    fun setData(safeArgs: MovieDetailFragmentArgs) {
+        id = safeArgs.movieId
     }
 
 }

@@ -1,6 +1,6 @@
 package com.shannon.moviemvvm.mapper
 
-import com.example.domain.entity.MovieDetailEntity
+import com.example.domain.model.MovieDetailModel
 import com.shannon.moviemvvm.model.Detail
 import com.example.common.Constants
 import java.text.NumberFormat
@@ -8,7 +8,7 @@ import java.util.*
 import javax.inject.Inject
 
 class DetailMapper @Inject constructor() {
-    fun mapToDetail(from: MovieDetailEntity) : Detail {
+    fun mapToDetail(from: MovieDetailModel) : Detail {
         return Detail(
             id = from.id,
             budget = formatCurrency(from.budget.toLong()),

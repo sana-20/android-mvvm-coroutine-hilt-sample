@@ -1,12 +1,12 @@
 package com.example.domain.mapper
 
 import com.example.data.dto.MovieDetailDto
-import com.example.domain.entity.MovieDetailEntity
+import com.example.domain.model.MovieDetailModel
 import javax.inject.Inject
 
 class MovieDetailMapper @Inject constructor() {
-    fun map(from: MovieDetailDto) : MovieDetailEntity {
-        return MovieDetailEntity(
+    fun map(from: MovieDetailDto) : MovieDetailModel {
+        return MovieDetailModel(
             from.budget,
             from.id,
             from.overview,

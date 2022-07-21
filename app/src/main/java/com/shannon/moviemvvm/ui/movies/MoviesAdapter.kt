@@ -5,20 +5,20 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.shannon.moviemvvm.databinding.MovieListItemBinding
-import com.example.domain.entity.MoviesEntity
+import com.example.domain.model.MoviesModel
 
 class MoviesAdapter(
     private val onClick: (movieId: Int) -> Unit
 ) :
-    PagingDataAdapter<MoviesEntity, MovieViewHolder>(DIFF_UTIL) {
+    PagingDataAdapter<MoviesModel, MovieViewHolder>(DIFF_UTIL) {
 
     companion object {
-        val DIFF_UTIL = object : DiffUtil.ItemCallback<MoviesEntity>() {
-            override fun areItemsTheSame(oldItem: MoviesEntity, newItem: MoviesEntity): Boolean {
+        val DIFF_UTIL = object : DiffUtil.ItemCallback<MoviesModel>() {
+            override fun areItemsTheSame(oldItem: MoviesModel, newItem: MoviesModel): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: MoviesEntity, newItem: MoviesEntity): Boolean {
+            override fun areContentsTheSame(oldItem: MoviesModel, newItem: MoviesModel): Boolean {
                 return oldItem == newItem
             }
         }

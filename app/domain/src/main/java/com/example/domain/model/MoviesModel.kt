@@ -1,6 +1,6 @@
-package com.example.domain.entity
+package com.example.domain.model
 
-data class MoviesEntity(
+data class MoviesModel(
     val id: Int,
     val imageUrl: String,
     val releaseDate: String,

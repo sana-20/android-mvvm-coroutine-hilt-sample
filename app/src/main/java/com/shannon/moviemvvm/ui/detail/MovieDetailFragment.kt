@@ -24,13 +24,9 @@ class MovieDetailFragment : BaseFragment<FragmentDetailMovieBinding>() {
             detailViewModel.onClickImage()
         }
 
-        fetchData()
-    }
-
-    private fun fetchData() {
         val safeArgs: MovieDetailFragmentArgs by navArgs()
-        val movieId = safeArgs.movieId
-        detailViewModel.getMovieDetail(movieId)
+        detailViewModel.setData(safeArgs)
+        detailViewModel.initView()
     }
 
     override fun observeChange() {

@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import androidx.paging.map
 import com.example.data.repository.MoviePagingSource
 import com.example.data.repository.MovieRepository
-import com.example.domain.entity.MoviesEntity
+import com.example.domain.model.MoviesModel
 import com.example.domain.mapper.MoviesMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -18,7 +18,7 @@ class GetMovieUseCase  @Inject constructor(
     private val movieRepository: MovieRepository,
     private val moviesMapper: MoviesMapper
 ) {
-    fun invoke(): Flow<PagingData<MoviesEntity>> {
+    fun invoke(): Flow<PagingData<MoviesModel>> {
         return Pager(
             config = PagingConfig(pageSize = NETWORK_PAGE_SIZE, enablePlaceholders = false),
             pagingSourceFactory = {
